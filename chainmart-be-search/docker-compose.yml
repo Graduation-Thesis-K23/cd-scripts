@@ -1,0 +1,14 @@
+version: "3.3"
+services:
+  chainmart-be-search:
+    container_name: chainmart-be-search
+    image: 376597958889.dkr.ecr.ap-southeast-1.amazonaws.com/chainmart-be-search:latest
+    restart: "always"
+    env_file:
+      - .env
+    networks:
+      - kafka-network
+
+networks:
+  kafka-network:
+    external: true

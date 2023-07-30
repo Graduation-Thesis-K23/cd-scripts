@@ -1,0 +1,31 @@
+version: '3.0'
+services:
+  rasa:
+    container_name: rasa
+    image: 376597958889.dkr.ecr.ap-southeast-1.amazonaws.com/chainmart-chatbot-rasa:latest
+    networks:
+      - rasa-network-01
+    depends_on:
+      - action_server
+
+  action_server:
+    container_name: action_server
+    image: 376597958889.dkr.ecr.ap-southeast-1.amazonaws.com/chainmart-chatbot-action:latest
+    networks:
+      - rasa-network-01
+
+  socketio:
+    container_name: socketio
+    image: 376597958889.dkr.ecr.ap-southeast-1.amazonaws.com/chainmart-chatbot-socket.io:latest
+    ports:
+      - 5000:5000
+    networks:
+      - rasa-network-01
+    depends_on:
+      - rasa
+    env_file:
+      - .env
+
+networks:
+  rasa-network-01:
+    driver: bridge
