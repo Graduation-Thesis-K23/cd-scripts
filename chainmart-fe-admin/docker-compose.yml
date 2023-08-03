@@ -2,7 +2,7 @@ version: "3.3"
 services:
   chainmart-fe-admin:
     container_name: chainmart-fe-admin
-    image: 376597958889.dkr.ecr.ap-southeast-1.amazonaws.com/chainmart-fe-admin:latest
+    image: 429660533268.dkr.ecr.ap-southeast-1.amazonaws.com/chainmart-fe-admin:latest
     ports:
       - "6001:80"
     restart: always

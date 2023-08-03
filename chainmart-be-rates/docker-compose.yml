@@ -1,8 +1,8 @@
 version: "3.3"
 services:
-  chainmart-be-search:
-    container_name: chainmart-be-search
-    image: 429660533268.dkr.ecr.ap-southeast-1.amazonaws.com/chainmart-be-search:latest
+  chainmart-be-rates:
+    container_name: chainmart-be-rates
+    image: 429660533268.dkr.ecr.ap-southeast-1.amazonaws.com/chainmart-be-rates:latest
     restart: "always"
     env_file:
       - .env
