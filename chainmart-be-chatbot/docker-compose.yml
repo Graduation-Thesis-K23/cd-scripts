@@ -21,6 +21,7 @@ services:
       - 5000:5000
     networks:
       - rasa-network-01
+      - kafka-network
     depends_on:
       - rasa
     env_file:
@@ -29,3 +30,5 @@ services:
 networks:
   rasa-network-01:
     driver: bridge
+  kafka-network:
+    external: true

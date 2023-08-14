@@ -1,0 +1,16 @@
+version: '3.0'
+services:
+  notification:
+    container_name: notification
+    image: 429660533268.dkr.ecr.ap-southeast-1.amazonaws.com/chainmart-be-notification:latest
+    networks:
+      - kafka-network
+    ports:
+      - "7001:3001"
+    restart: "always"
+    env_file:
+      - .env
+
+networks:
+  kafka-network:
+    external: true
